@@ -1,8 +1,9 @@
 from PyQt5 import QtWidgets
 import sys
-app = QtWidgets.QApplication(sys.argv)
 
-Form = QtWidgets.QWidget()
+app = QtWidgets.QApplication(sys.argv) # 視窗程式開始
+
+Form = QtWidgets.QWidget()             # 放入基底元件
 Form.setWindowTitle('oxxo.studio')
 Form.resize(300, 200)
 
