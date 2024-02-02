@@ -15,11 +15,11 @@ class myMainWindow(QMainWindow, Ui_pyqt5_test_03_V.Ui_MainWindow):
         self.pushButton.clicked.connect(self.buttonClicked)
 
     def buttonClicked(self):
-        self.label.setText('thank you!!')
-        if self.lineEdit.text()!= 'thank you!!':
-            self.label.setText('thank you!!')
+        #self.label.setText('thank you!!')
+        if self.label.text()!= '1':
+            self.label.setText('1')
         else:
-            self.label.setText('fuck you!!')
+            self.label.setText('2')
 
 
 if __name__ == '__main__':
