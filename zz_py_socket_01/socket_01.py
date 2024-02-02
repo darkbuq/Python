@@ -1,8 +1,18 @@
 import socket
-s = socket.socket()
-print("connecting")
-s.connect(("169.254.37.237",5024))
-print("sending")
-s.settimeout(10)
-s.send("*IDN?\r\n")
-print(s.recv(2048))
+
+TCP_IP      = '169.254.37.237'  # or whatever address you'll find on the E4980A screen
+TCP_PORT    = 5025
+BUFFER_SIZE = 1024
+
+def query(cmd):
+    s.send(bytes(cmd+"\r\n",'ansi'))
+    return s.recv(BUFFER_SIZE).decode('utf8')
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(3.0)
+s.connect((TCP_IP, TCP_PORT))
+
+print(query("*IDN?"))
+
+s.close()
+### end of script
