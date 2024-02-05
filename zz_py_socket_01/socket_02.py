@@ -26,8 +26,8 @@ class myMainWindow(QMainWindow, ui_02.Ui_MainWindow):
         self.btn_read.clicked.connect(self.buttonRead)
         
     def buttonClicked(self):
-        conn()
-        self.txt_result.setText(query("*IDN?"))
+        self.txt_result.setText(conn())
+        # self.txt_result.setText(query("*IDN?"))
         
     def buttonRead(self):
         self.txt_result.setText(query("read?"))
@@ -49,12 +49,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(3.0)
 
 def conn():
-    s.connect((TCP_IP, TCP_PORT))
-    # try:
-    #     s.connect((TCP_IP, TCP_PORT))
-    # except Exception as e:
-    #     self.txt_result.setText(e)
-    #     return e
+    # s.connect((TCP_IP, TCP_PORT))
+    try:
+        s.connect((TCP_IP, TCP_PORT))
+        return 'connect success'
+    except Exception as e:
+        # self.txt_result.setText(str(e))
+        return str(e)
 
 
 
