@@ -1,6 +1,6 @@
 import socket
 
-TCP_IP      = '169.254.37.237'  # or whatever address you'll find on the E4980A screen
+TCP_IP      = '169.254.4.61'  # or whatever address you'll find on the E4980A screen
 TCP_PORT    = 5025
 BUFFER_SIZE = 1024
 
